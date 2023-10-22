@@ -1,0 +1,59 @@
+python -m venv myenv
+to create virtual environment
+
+
+D:\brijesh\Django\myenv\Scripts>activate
+to activate virtual environment
+
+(myenv) D:\brijesh\Django>pip install django
+then install django
+
+(myenv) D:\brijesh\Django>django-admin --version
+to check django version
+
+(myenv) D:\brijesh\Django>django-admin startproject basicprojects
+to create projects
+
+(myenv) D:\brijesh\Django\basicprojects>code .
+to open project in vscode
+
+(myenv) D:\brijesh\Django\basicprojects>python manage.py startapp myapp
+to create app
+
+(myenv) D:\brijesh\Django\basicprojects>python manage.py runserver      
+to run server
+
+crtl c to stop server
+
+
+(myenv) D:\brijesh\Django\basicprojects>python manage.py migrate
+to apply migration to create tables or to create adim panel
+
+(myenv) D:\brijesh\Django\basicprojects>python manage.py createsuperuser
+Username (leave blank to use 'krima'): carpoolwave
+Email address: bvekariya54@gmail.com
+Password:
+Password (again):
+to create admin page
+
+pip install mysqlclient
+to create sql client
+
+
+(myenv) D:\brijesh\Django\basicprojects>python manage.py migrate
+to create tables
+
+start local host via xampp control panel
+create database and name of database is same as name in setting.py
+
+(myenv) D:\brijesh\Django\basicprojects>python manage.py createsuperuser
+Username (leave blank to use 'krima'): carpoolwave
+Email address: bvekariya54@gmail.com
+Password:
+Password (again):
+to create admin page for our database
+
+(myenv) D:\brijesh\Django\basicprojects>python manage.py runserver      
+to run server
+
+crtl c to stop server
