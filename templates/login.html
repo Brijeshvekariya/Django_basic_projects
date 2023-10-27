@@ -33,6 +33,12 @@
             <strong>Success</strong>{{ msg1 }}
           </div>
           {% endif %}
+          {% if msg2 %}
+          <div class="alert alert-success alert-dismissible fade show">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>Success</strong>{{ msg2 }}
+          </div>
+          {% endif %}
 
                 <div class="card-body">
                     <form action="{% url 'login' %}" method="post">
