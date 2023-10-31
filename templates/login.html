@@ -41,7 +41,7 @@
           {% endif %}
 
                 <div class="card-body">
-                    <form action="{% url 'login' %}" method="post">
+                    <form action="{% url 'login' %}" method="post" enctype="multipart/form-data">
                       {% csrf_token %}
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>

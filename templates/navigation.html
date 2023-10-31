@@ -44,6 +44,9 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'change_password' %}">Change Password</a>
             </li>
+            <li>
+              <img src="{{ request.session.profile_pic}}" alt="" height="50px" width="50px">
+            </li>
             
           {% else %}
             
@@ -56,6 +59,10 @@
             
           {% endif %}
           
+         
+          <a href="https://wa.me/+918320405731?text=I'm%20interested%20in%20your%20car%20for%20sale" target="_blank">
+            <img src="/static/whatsapp.png" alt="" width="30px" height="30px">   <!--folder name should be same as setting -> static url-->
+          </a>
             </ul>
           </div>
         </div>
@@ -63,4 +70,18 @@
 </body>
 {% block content %}
 {% endblock %}
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/653f39dff2439e1631e9c495/1hdvfk4vf';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
 </html>
