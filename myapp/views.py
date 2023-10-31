@@ -33,6 +33,7 @@ def login(request):
                 )
             request.session['email']=user.email
             request.session['fname']=user.fname
+            request.session['profile_pic']=user.profile_pic.url
             msg1=" Login Succesfully"
             return render(request,'home.html',{'msg1':msg1})           
         except User.DoesNotExist:
@@ -56,6 +57,7 @@ def signup(request):
                     mobile=request.POST['mobile'],
                     address=request.POST['address'],
                     password=request.POST['password'],
+                    profile_pic= request.FILES('profile_pic'),
                 )
                 msg1=" Sign Up Successfully!"
                 return render(request,'login.html',{'msg1':msg1})
@@ -73,7 +75,7 @@ def logout(request):
         return render(request,'login.html',{'msg2':msg2})  # Redirect to the 'login' URL name
     # return render(request,'login.html',{'msg2':msg2})
     except:
-        pass
+        return render(request,'login.html')
 
 # how to solve this error of changing password
 def change_password(request):
