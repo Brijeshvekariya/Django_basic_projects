@@ -45,7 +45,7 @@
               <a class="nav-link" href="{% url 'change_password' %}">Change Password</a>
             </li>
             <li>
-              <img src="{{ request.session.profile_pic}}" alt="" height="50px" width="50px">
+              <a href="{% url 'profile'%}"><img src="{{ request.session.profile_pic}}" alt="" height="50px" width="50px"></a>
             </li>
             
           {% else %}
