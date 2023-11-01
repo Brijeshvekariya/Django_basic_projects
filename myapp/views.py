@@ -57,7 +57,7 @@ def signup(request):
                     mobile=request.POST['mobile'],
                     address=request.POST['address'],
                     password=request.POST['password'],
-                    profile_pic= request.FILES('profile_pic'),
+                    profile_pic= request.FILES['profile_pic'],
                 )
                 msg1=" Sign Up Successfully!"
                 return render(request,'login.html',{'msg1':msg1})
@@ -140,3 +140,20 @@ def new_password(request):
     except User.DoesNotExist:
         msg = " User does not exist"
         return render(request,'new_password.html',{'msg':msg})
+    
+def profile(request):
+    user = User.objects.get(email=request.session['email'])
+    if request.method=="POST":
+        user.fname=request.POST['fname']
+        user.lname=request.POST['lname']
+        user.address=request.POST['address']
+        try:
+            user.profile_pic=request.FILES['profile_pic']
+        except:
+            pass
+        user.save()
+        msg1=" Profile Updated Successfully"
+        request.session['profile_pic']=user.profile_pic.url
+        return render(request,'profile.html',{'user':user,'msg1':msg1})
+    else:
+        return render(request,'profile.html',{'user':user})
